@@ -1,19 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400&family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
 /* PrismJS 1.29.0
 https://prismjs.com/download.html#themes=prism-okaidia&languages=clike+c&plugins=line-numbers */
 /**
  * okaidia theme for JavaScript, CSS and HTML
  * Loosely based on Monokai textmate theme by http://www.monokai.nl/
  * @author ocodia
- */
+ * edited a bit by me to make it akin to monokai*/
 
 code[class*="language-"],
 pre[class*="language-"] {
 	color: #f8f8f2;
 	background: none;
-	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-	font-size: 1em;
+	/* text-shadow: 0 1px rgba(0, 0, 0, 0.3); */
+	font-family: 'consolas', 'monospace';
+	font-size: 1.05em;
 	text-align: left;
 	white-space: pre;
 	word-spacing: normal;
@@ -33,19 +34,19 @@ pre[class*="language-"] {
 
 /* Code blocks */
 pre[class*="language-"] {
-	padding: 1em;
+	padding: 0.2em;
 	margin: .5em 0;
 	overflow: auto;
 	border-radius: 0.3em;
 }
 
-:not(pre) > code[class*="language-"],
+:not(pre)>code[class*="language-"],
 pre[class*="language-"] {
 	background: #272822;
 }
 
 /* Inline code */
-:not(pre) > code[class*="language-"] {
+:not(pre)>code[class*="language-"] {
 	padding: .1em;
 	border-radius: .3em;
 	white-space: normal;
@@ -86,7 +87,7 @@ pre[class*="language-"] {
 .token.char,
 .token.builtin,
 .token.inserted {
-	color:#e6db74;
+	color: #e6db74;
 }
 
 .token.operator,
@@ -107,6 +108,7 @@ pre[class*="language-"] {
 
 .token.keyword {
 	color: #66d9ef;
+	font-style: italic;
 }
 
 .token.regex,
@@ -114,10 +116,10 @@ pre[class*="language-"] {
 	color: #fd971f;
 }
 
-.token.important,
 .token.bold {
 	font-weight: bold;
 }
+
 .token.italic {
 	font-style: italic;
 }
@@ -128,12 +130,12 @@ pre[class*="language-"] {
 
 pre[class*="language-"].line-numbers {
 	position: relative;
-	padding-left: 3.8em;
+	padding-left: 3.2em;
 	counter-reset: linenumber;
 	white-space: pre-wrap;
 }
 
-pre[class*="language-"].line-numbers > code {
+pre[class*="language-"].line-numbers>code {
 	position: relative;
 	white-space: inherit;
 }
@@ -141,12 +143,13 @@ pre[class*="language-"].line-numbers > code {
 .line-numbers .line-numbers-rows {
 	position: absolute;
 	pointer-events: none;
-	top: 0;
-	font-size: 100%;
-	left: -3.8em;
-	width: 3em; /* works for line-numbers below 1000 lines */
+	top: -0.15em;
+	left: -3.2em;
+	width: 3em;
+	/* works for line-numbers below 1000 lines */
+	font-size: 0.98em;
 	letter-spacing: -1px;
-	border-right: 1px solid #999;
+	/* border-right: 1px solid #999; */
 
 	-webkit-user-select: none;
 	-moz-user-select: none;
@@ -155,71 +158,58 @@ pre[class*="language-"].line-numbers > code {
 
 }
 
-	.line-numbers-rows > span {
-		display: block;
-		counter-increment: linenumber;
-	}
+.line-numbers-rows>span {
+	display: block;
+	counter-increment: linenumber;
+}
 
-		.line-numbers-rows > span:before {
-			content: counter(linenumber);
-			color: #999;
-			display: block;
-			padding-right: 0.8em;
-			text-align: right;
-		}
-
-
+.line-numbers-rows>span:before {
+	content: counter(linenumber);
+	color: hsl(0, 0%, 65%);
+	display: block;
+	padding-right: 0.8em;
+	text-align: right;
+	background-color: hsl(70, 8%, 20%);
+	border-right: 2px solid #999;
+	line-height: 1.8rem;
+}
 /*stackedit css*/
 
 /* markdown css*/
-
 html {
-    line-height: 1.15;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%
+	line-height: 1.15;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%
 }
 
 body {
-    margin: 0;
-    background-color: hsl(0, 0%, 100%);
-    color:#2e2e2e;
-    font-family: 'Poppins', sans-serif;
+	margin: 0;
+	background-color: hsl(0, 0%, 100%);
+	color: #272822;
+	font-family: 'Roboto Slab', serif;
 }
 
 h1 {
-    font-size: 3em;
-    margin: .67em 0;
+	font-size: 3.1em;
+	margin: 1em 0;
 }
 
 hr {
-    box-sizing: content-box;
-    height: 0;
-    overflow: visible
+	box-sizing: content-box;
+	height: 0;
+	overflow: visible
 }
 
 b,
 strong {
-    font-weight: inherit;
-    font-weight: bolder;
+	font-weight: inherit;
+	font-weight: bolder;
 }
-
-
 
 img {
-    border-style: none;
-    border-radius: 0.5em;
+	border-style: none;
+	border-radius: 0.3em;
 }
-
-
-/*html {
-    color: rgba(0, 0, 0, .75);
-    font-size: 16px;
-    font-family: Lato, Helvetica Neue, Helvetica, sans-serif;
-    font-variant-ligatures: common-ligatures;
-    line-height: 1.67;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale
-}*/
 
 blockquote,
 dl,
@@ -227,83 +217,109 @@ ol,
 p,
 pre,
 ul {
-    margin: 1.2em 0
-}
-
-h1,
-h2,
-h3
-{
-    margin: 1em 0;
-    /* line-height: 1.33 */
+	margin: 1.2em 0
 }
 
 h1:after {
-    content: '';
-    display: block;
-    position: relative;
-    top: .33em;
-    border-bottom: 4px solid hsla(0, 0%, 50%, .33)
+	content: '';
+	display: block;
+	position: relative;
+	top: .33em;
+	border-bottom: 4px solid hsla(0, 0%, 50%, .33)
 }
 
 ol ol,
 ol ul,
 ul ol,
 ul ul {
-    margin: 0
+	margin: 0
 }
 
 dt {
-    font-weight: 700
+	font-weight: 700
 }
-
-
 
 hr {
-    border: 0;
-    border-top: 4px solid hsla(0, 0%, 50%, .33);
-    margin: 2em 0
-}
-
-.toc ul {
-    list-style-type: none;
-    padding-left: 20px
-}
-
-table {
-    background-color: transparent;
-    border-collapse: collapse;
-    border-spacing: 0
-}
-
-td,
-th {
-    border-right: 1px solid #dcdcdc;
-    padding: 8px 12px
+	border: 0;
+	border-top: 4px solid hsla(0, 0%, 50%, .33);
+	margin: 2em 0
 }
 
 td:last-child,
 th:last-child {
-    border-right: 0
+	border-right: 0
 }
 
 td {
-    border-top: 1px solid #dcdcdc
+	border-top: 1px solid #dcdcdc
 }
 
 img {
-    width: 100%
+	width: 100%
 }
 
 .stackedit__html {
-    margin-bottom: 180px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 30px;
-    padding-right: 30px;
-    max-width: 950px
+	margin-bottom: 180px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 30px;
+	padding-right: 30px;
+	max-width: 950px
 }
 
 pre {
 	width: 100;
+}
+
+h3 {
+	line-height: 1.3em;
+	font-weight: 600;
+}
+
+pre::after {
+	content: 'language-C';
+	position: absolute;
+	top: 0.6em;
+	right: 0.4em;
+	font-size: 0.9em;
+	background-color: hsl(70, 8%, 25%);
+	border-radius: 0.3em;
+	color: hsl(0, 0%, 85%);;
+	padding: 0.3em;
+}
+
+@media print {
+	/* Adjust page size for printing */
+	@page {
+		size: 310mm 850mm;
+	}
+}
+
+.imgdiv::before {
+	content: 'OUTPUT';
+	position: relative;
+	display: block;
+	bottom: -0.2em;
+	background-color: #272822;
+	border-radius: 0.3em 1.2em 0em 0em;
+	color: hsl(0, 0%, 85%);;
+	padding: 0.5em;
+}
+
+*[contenteditable="true"]:focus {
+	background-color: hsl(80, 76%, 75%);
+	border: 2px solid hsl(80, 76%, 45%);
+}
+
+p {
+	font-weight: 600;
+	font-family: inherit;
+}
+
+h3::before {
+	content: '\01F3AF';
+	position: relative;
+	padding-left: 0;
+	left: -0.2em;
+	font-size: 2.5em;;
 }
